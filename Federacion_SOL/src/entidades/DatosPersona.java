@@ -77,6 +77,7 @@ public class DatosPersona {
 				+ fechaNac.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ")";
 	}
 
+//Examen 5 ejercicio 3
 	public static DatosPersona nuevaPersona() {
 		DatosPersona ret = null;
 		Scanner in;
@@ -116,6 +117,13 @@ public class DatosPersona {
 
 		else
 			doc = NIE.nuevoNIE();
+//		do {
+//			System.out.println("Introduzca el NIF:");
+//			in = new Scanner(System.in);
+//			nif = in.nextLine();
+//			if (nif.length()==9);
+//			valido = true;			
+//		}while (!valido);
 
 		ret = new DatosPersona(id, nombre, tfn, fecha, doc);
 		return ret;

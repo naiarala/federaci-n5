@@ -10,10 +10,10 @@ public class Principal4 {
 	public static void main(String[] args) {
 		Datos.cerrarResultados();
 		System.out.println("INICIO");
-		
+
 		Scanner in;
 		int elecc = -1;
-		Rol rol; //Examen 4 Ejercicio 3A
+		Rol rol; // Examen 4 Ejercicio 3A
 		boolean correcto = false;
 		while (true) {
 			System.out.println("Bienvenido al programa de gestión de la FEDERACIÓN DEPORTIVA:");
@@ -40,7 +40,7 @@ public class Principal4 {
 			} while (!correcto);
 			rol = Rol.values()[elecc - 1];
 
-			Credenciales cred; //Examen 4 Ejericicio 3B
+			Credenciales cred; // Examen 4 Ejericicio 3B
 			boolean login = false;
 			switch (rol.ordinal()) {
 			case 0: // Rol.DIRECTIVA;
@@ -70,7 +70,7 @@ public class Principal4 {
 			mostrarMenu(rol);
 		}
 
-	} //Final del main
+	} // Final del main
 
 	// Examen 3 Ejercicio 2 - Examen 4 Ejercicio 3C
 	private static void mostrarMenu(Rol rol) {
@@ -210,7 +210,7 @@ public class Principal4 {
 		boolean valido = false;
 		System.out.println("\nGESTIÓN de MEDALLAS.");
 		switch (elecc) {
-		case 1: //opción 1.1.1
+		case 1: // opción 1.1.1
 			do {
 				System.out.println("Ha seleccionado Nueva MEDALLA.");
 				System.out.println("Seleccione 1 para ORO, 2 para PLATA o 3 para BRONCE.");
@@ -234,8 +234,17 @@ public class Principal4 {
 			System.out.println("Se ha introducido una nueva medalla correctamente.");
 			System.out.println(nuevo);
 			break;
-//		case 2:  //opción 1.1.2
-//			System.out.println("Ha seleccionado ");
+//Exam 5 ejercicio 6
+//		case 2: // opción 1.1.2
+		// do {
+//			System.out.println("Ha seleccionado el valor de la pureza");
+//          System.out.printnl("Seleccione un valor entre 88.55% y 90.1%");
+//			subelecc = in.nextInt();
+//			if (pureza.length() <= 90.1 && >=88.55)
+//			System.out.println("¡Valor seleccionado válido!\n");
+//			else
+//				valido = !false;
+//		} while (!valido);
 //			break;
 		default:
 		}
@@ -248,10 +257,10 @@ public class Principal4 {
 		int subelecc = -1;
 		boolean valido = false;
 		switch (elecc) {
-		case 1:  //opción 2.1
+		case 1: // opción 2.1
 			System.out.println("Ha seleccionado CONFORMAR EQUIPO.");
 			break;
-		case 2: //opción 2.2
+		case 2: // opción 2.2
 			System.out.println("Ha seleccionado INSCRIPCIÓN de EQUIPO en PRUEBA.");
 			break;
 		default:
@@ -264,10 +273,10 @@ public class Principal4 {
 		int subelecc = -1;
 		boolean valido = false;
 		switch (elecc) {
-		case 1: ////opción 3.1
+		case 1: //// opción 3.1
 			System.out.println("Ha seleccionado FEDERARSE (Nuevo ATLETA).");
 			break;
-		case 2: //opción 3.2
+		case 2: // opción 3.2
 			System.out.println("Ha seleccionado INSCRIPCIÓN de ATLETA en PRUEBA..");
 			break;
 		default:
@@ -280,12 +289,12 @@ public class Principal4 {
 		int subelecc = -1;
 		boolean valido = false;
 		switch (elecc) {
-		case 1: ////opción 4.1
+		case 1: //// opción 4.1
 			System.out.println("Ha seleccionado Nuevo COLEGIADO.");
 			Colegiado nuevo = Colegiado.nuevoColegiado();
 			System.out.println("Se ha creado correctamente el nuevo colegiado:" + nuevo);
 			break;
-		case 2: ////opción 4.2
+		case 2: //// opción 4.2
 			System.out.println("Ha seleccionado INTRODUCIR RESULTADOS de PRUEBA..");
 			break;
 		default:
@@ -326,44 +335,33 @@ public class Principal4 {
 	private static void mostrarMenuDirectiva() {
 		System.out.println("Menú de la DIRECTIVA.");
 		System.out.println("Seleccione una de las siguientes opciones:");
-		System.out.println("1. Gestión de medallas\n" 
-				+ "2. Gestión de competiciones y pruebas.\n"
-				+ "0. Volver");
+		System.out.println("1. Gestión de medallas\n" + "2. Gestión de competiciones y pruebas.\n" + "0. Volver");
 	}
 
 	private static void mostrarMenuManager() {
 		System.out.println("Menú para los MÁNAGERS.");
 		System.out.println("Seleccione una de las siguientes opciones:");
-		System.out.println("1. Conformar equipo\n" 
-				+ "2. Inscripcion de equipo en prueba.\n" 
-				+ "0. Volver");
+		System.out.println("1. Conformar equipo\n" + "2. Inscripcion de equipo en prueba.\n" + "0. Volver");
 	}
 
 	private static void mostrarMenuAtleta() {
 		System.out.println("Menú para los ATLETAS.");
 		System.out.println("Seleccione una de las siguientes opciones:");
-		System.out.println("1. Federarse (nuevo Atleta)\n" 
-				+ "2. Inscrcipcion de atleta en prueba.\n" 
-				+ "0. Volver");
+		System.out.println("1. Federarse (nuevo Atleta)\n" + "2. Inscrcipcion de atleta en prueba.\n" + "0. Volver");
 
 	}
 
 	private static void mostrarMenuColegiado() {
 		System.out.println("Menú para los COLEGIADOS.");
 		System.out.println("Seleccione una de las siguientes opciones:");
-		System.out.println("1. Nuevo Colegiado\n" 
-				+ "2. Introducir resultados de prueba.\n" 
-				+ "0. Volver");
+		System.out.println("1. Nuevo Colegiado\n" + "2. Introducir resultados de prueba.\n" + "0. Volver");
 	}
 
 	private static void mostrarMenuAdmin() {
 		System.out.println("Menú para los ADMINISTRADORES.");
 		System.out.println("Seleccione una de las siguientes opciones:");
-		System.out.println("1. Gestión de medallas, de competiciones y de pruebas\n" 
-				+ "2. Gestión de equipos.\n"
-				+ "3. Gestión de atletas.\n" 
-				+ "4. Gestión de arbitrajes y resultados.\n" 
-				+ "0. Volver");
+		System.out.println("1. Gestión de medallas, de competiciones y de pruebas\n" + "2. Gestión de equipos.\n"
+				+ "3. Gestión de atletas.\n" + "4. Gestión de arbitrajes y resultados.\n" + "0. Volver");
 	}
 
 	private static void mostrarMenuInvitado() {

@@ -14,6 +14,26 @@ import java.util.regex.Pattern;
  * @author luis
  */
 public class Utilidades {
+	// Exam 5 ejercicio 1: implementar funcion leerfloat
+
+	public static float leerFloat() {
+		float ret = 0F;
+		boolean correcto = false;
+		Scanner in;
+		float resp;
+		do {
+			System.out.println("Introduzca un valor primo...");
+			in = new Scanner(System.in, "0F");
+			try {
+				ret = in.nextFloat();
+				correcto = true;
+			} catch (InputMismatchException ime) {
+				System.out.println("Formato introducido incorrecto.");
+				correcto = false;
+			}
+		}while (!correcto);
+		return ret;
+	}
 
 	/**
 	 * Función que pide al usuario que introduzca 's' o 'S' para Sí o 'n' o 'N' para
@@ -154,10 +174,12 @@ public class Utilidades {
 	/**
 	 * Función que quita los espacios en blanco del comienzo y del final de una
 	 * cadena de caracteres que se pasa como parámetro y, además, sustituye todas
-	 * las vocales que tengan tilde por la correspondiente sin tilde, devolviendo la cadena resultante
+	 * las vocales que tengan tilde por la correspondiente sin tilde, devolviendo la
+	 * cadena resultante
 	 * 
 	 * @param s cadena original
-	 * @return cadena original sin espacios en blanco al comienzo y final de la cadena y sin vocales con tildes
+	 * @return cadena original sin espacios en blanco al comienzo y final de la
+	 *         cadena y sin vocales con tildes
 	 */
 	public static String quitarEspaciosTildes(String s) {
 		String ret = s.trim();

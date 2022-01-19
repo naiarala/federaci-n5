@@ -1,13 +1,36 @@
 package entidades;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 import utils.Datos;
 
 public class Atleta extends Participante {
 	private long idAtleta;
 	private float altura;
 	private float peso;
+	LocalDate fechaNac;
 
 	private DatosPersona persona;
+	//Examen 5 ejercicio 4: implementar el submenu
+	public static Atleta nuevoAtleta() {
+		Atleta ret = nuevoAtleta();
+		Scanner in;
+		long id = -1;
+		float altura = 'F';
+		float peso ='F';
+		boolean valido = false;
+		do {
+			System.out.println("Introduzca el id del nuevo atleta:");
+			in = new Scanner(System.in);
+			id = in.nextInt();
+			if (id > 0)
+				valido = true;
+		} while (!valido);
+		valido = false;
+		return ret;
+	}
 
 	public Atleta(long id, int dorsal, char calle, long idAtleta, float altura, float peso) {
 		super(id, dorsal, calle);
@@ -70,5 +93,13 @@ public class Atleta extends Participante {
 	public DatosPersona getPersona() {
 		return this.persona;
 	}
+	//Examen 5 ejercicio 5
+//	@Override
+//	public String toString() {
+//		String ret = "";
+//		return ret += "idAtleta" + id + "nombre" + "documentacion" +" ("
+//				+ fechaNac.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ")" + " peso:"Kgs. + 
+//				"altura"m.";
+//	}
 
 }
